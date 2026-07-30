@@ -141,7 +141,7 @@ class CLI:
     # ----------------------------------------------------------
 
     def execute(
-
+        
         self,
 
         pdf_path: Path,
@@ -149,7 +149,12 @@ class CLI:
         output_path: Path,
 
     ) -> None:
+        #modified it later by AI
+        if not pdf_path.exists():
 
+            raise FileNotFoundError(
+                f"Input PDF file not found: {pdf_path}"
+            )
         logger.info(
             "Reading PDF..."
         )
